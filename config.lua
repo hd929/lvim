@@ -3,6 +3,7 @@ require "user.options"
 require "user.keymaps"
 require "user.lsp"
 require "user.telescope"
+require "user.neoscroll"
 
 -- general
 lvim.log.level = "warn"
