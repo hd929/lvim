@@ -33,6 +33,12 @@ lvim.plugins = {
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
   },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require('symbols-outline').setup()
+    end
+  },
 
   -- General
   {
@@ -50,6 +56,10 @@ lvim.plugins = {
     config = function()
       require("todo-comments").setup()
     end,
+  },
+  {
+    "monaqa/dial.nvim",
+    event = "BufRead",
   },
 
   -- Git

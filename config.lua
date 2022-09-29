@@ -5,6 +5,7 @@ require "user.lsp"
 require "user.telescope"
 require "user.neoscroll"
 require "user.colorizer"
+require "user.dial"
 
 -- general
 lvim.log.level = "warn"
