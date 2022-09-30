@@ -90,4 +90,7 @@ lvim.plugins = {
   {
     "norcalli/nvim-colorizer.lua",
   },
+
+  -- Extra
+  "folke/zen-mode.nvim"
 }
