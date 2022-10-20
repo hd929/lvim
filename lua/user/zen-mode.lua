@@ -1,5 +1,5 @@
-local status_ok, zen_mode = pcall(require, "zen-mode")
-if not status_ok then
+local _, zen_mode = pcall(require, "zen-mode")
+if not _ then
   return
 end
 

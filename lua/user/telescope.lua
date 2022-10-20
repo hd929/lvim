@@ -1,4 +1,6 @@
 local _, actions = pcall(require, "telescope.actions")
+if not _ then return end
+
 lvim.builtin.telescope.defaults.mappings = {
   --   -- for input mode
   i = {
