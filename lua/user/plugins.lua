@@ -90,6 +90,12 @@ lvim.plugins = {
   {
     "norcalli/nvim-colorizer.lua",
   },
+  {
+    "rktjmp/lush.nvim",
+  },
+
+  -- LSP
+  "rmagatti/goto-preview",
 
   -- Extra
   "folke/zen-mode.nvim"
