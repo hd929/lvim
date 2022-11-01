@@ -1,10 +1,10 @@
-require "user.plugins"
-require "user.options"
-require "user.keymaps"
-require "user.lsp"
-require "user.telescope"
-require "user.dial"
-require "user.zen-mode"
+reload "user.plugins"
+reload "user.options"
+reload "user.keymaps"
+reload "user.lsp"
+reload "user.telescope"
+reload "user.dial"
+reload "user.zen-mode"
 
 -- general
 lvim.log.level = "warn"
