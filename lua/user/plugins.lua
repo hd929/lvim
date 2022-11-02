@@ -157,13 +157,6 @@ lvim.plugins = {
     end
   },
 
-  -- Language specific
-  {
-    "turbio/bracey.vim",
-    cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
-    run = "npm install --prefix server",
-  },
-
   -- Extra
   "folke/zen-mode.nvim"
 }
