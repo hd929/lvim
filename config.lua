@@ -9,4 +9,4 @@ reload "user.zen-mode"
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "lunar"
