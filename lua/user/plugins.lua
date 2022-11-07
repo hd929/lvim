@@ -41,10 +41,6 @@ lvim.plugins = {
   },
 
   -- General
-  {
-    "metakirby5/codi.vim",
-    cmd = "Codi",
-  },
   "tpope/vim-surround",
   {
     "karb94/neoscroll.nvim",
@@ -291,6 +287,28 @@ lvim.plugins = {
       local keymap = vim.api.nvim_set_keymap
 
       keymap("n", "<M-r>", ":silent only | Jaq<CR>", opts)
+    end
+  },
+  {
+    "0x100101/lab.nvim",
+    run = "cd js && npm ci",
+    config = function()
+      require("lab").setup {
+        code_runner = {
+          enabled = true,
+        },
+        quick_data = {
+          enabled = false,
+        },
+      }
+
+      local opts = { noremap = true, silent = true }
+
+      local keymap = vim.api.nvim_set_keymap
+
+      keymap("n", "<m-4>", ":Lab code run<cr>", opts)
+      keymap("n", "<m-5>", ":Lab code stop<cr>", opts)
+      keymap("n", "<m-6>", ":Lab code panel<cr>", opts)
     end
   }
 }
