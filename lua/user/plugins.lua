@@ -148,7 +148,7 @@ lvim.plugins = {
       require("goto-preview").setup {
         width = 100; -- Width of the floating window
         height = 25; -- Height of the floating window
-        border = { "↖", "─", "┐", "│", "┘", "─", "└", "│" }; -- Border characters of the floating window
+        border = { "", "─", "╮", "│", "╯", "─", "╰", "│" }; -- Border characters of the floating window
         default_mappings = true; -- Bind default mappings
         debug = false; -- Print debug information
         opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
