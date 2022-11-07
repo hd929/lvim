@@ -120,16 +120,40 @@ lvim.plugins = {
 
   -- Colorschemes
   {
-    "norcalli/nvim-colorizer.lua",
+    "NvChad/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      require("colorizer").setup {
+        filetypes = { "*" },
+        user_default_options = {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          names = false, -- "Name" codes like Blue or blue
+          RRGGBBAA = false, -- #RRGGBBAA hex codes
+          AARRGGBB = false, -- 0xAARRGGBB hex codes
+          rgb_fn = false, -- CSS rgb() and rgba() functions
+          hsl_fn = false, -- CSS hsl() and hsla() functions
+          css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+          -- Available modes for `mode`: foreground, background,  virtualtext
+          mode = "background", -- Set the display mode.
+          -- Available methods are false / true / "normal" / "lsp" / "both"
+          -- True is same as normal
+          tailwind = false, -- Enable tailwind colors
+          -- parsers can contain values used in |user_default_options|
+          sass = { enable = false, parsers = { 'css' } }, -- Enable sass colors
+          virtualtext = "■",
+        },
+        -- all the sub-options of filetypes apply to buftypes
+        buftypes = {},
+      }
+
+      vim.api.nvim_create_autocmd({ "FileType" }, {
+        pattern = {
+          "*.css",
+        },
+        callback = function()
+          require("colorizer").attach_to_buffer(0, { mode = "background", css = true })
+        end,
       })
     end
   },
@@ -310,5 +334,11 @@ lvim.plugins = {
       keymap("n", "<m-5>", ":Lab code stop<cr>", opts)
       keymap("n", "<m-6>", ":Lab code panel<cr>", opts)
     end
-  }
+  },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
+    end
+  },
 }
