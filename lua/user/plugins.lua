@@ -335,10 +335,12 @@ lvim.plugins = {
       keymap("n", "<m-6>", ":Lab code panel<cr>", opts)
     end
   },
-  {
-    "j-hui/fidget.nvim",
-    config = function()
-      require("fidget").setup()
-    end
-  },
+  -- "MunifTanjim/nui.nvim",
+  -- {
+  --   "folke/noice.nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("noice").setup()
+  --   end,
+  -- },
 }
