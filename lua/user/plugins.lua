@@ -32,16 +32,30 @@ lvim.plugins = {
     config = function()
       require("bqf").setup({
         auto_enable = true,
+        magic_window = true,
+        auto_resize_height = false,
         preview = {
-          win_height = 12,
-          win_vheight = 12,
-          delay_syntax = 80,
-          border_chars = { "─", "╮", "│", "╯", "─", "╰", "│" },
+          auto_preview = false,
+          show_title = true,
+          delay_syntax = 50,
+          wrap = false,
         },
         func_map = {
-          vsplit = "",
-          ptogglemode = "z,",
-          stoggleup = "",
+          tab = "t",
+          openc = "o",
+          drop = "O",
+          split = "s",
+          vsplit = "v",
+          stoggleup = "M",
+          stoggledown = "m",
+          stogglevm = "m",
+          filterr = "f",
+          filter = "F",
+          prevhist = "<",
+          nexthist = ">",
+          sclear = "c",
+          ptoggleauto = "p",
+          ptogglemode = "P",
         },
         filter = {
           fzf = {
@@ -97,6 +111,25 @@ lvim.plugins = {
   {
     "monaqa/dial.nvim",
     event = "BufRead",
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
+  },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    module = "persistence",
+    config = function()
+      require("persistence").setup {
+        dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+        options = { "buffers", "curdir", "tabpages", "winsize" },
+      }
+    end,
   },
 
   -- Git
