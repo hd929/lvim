@@ -323,7 +323,7 @@ lvim.plugins = {
           default = "terminal",
 
           -- Start in insert mode
-          startinsert = false,
+          startinsert = true,
 
           -- Use `wincmd p` on startup
           wincmd = false,
