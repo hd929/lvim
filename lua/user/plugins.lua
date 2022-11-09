@@ -402,4 +402,14 @@ lvim.plugins = {
   --     require("noice").setup()
   --   end,
   -- },
+
+  {
+    "mg979/vim-visual-multi",
+    config = function()
+      vim.cmd([[
+                let g:VM_maps = {}
+                let g:VM_mouse_mappings = 1
+                ]])
+    end,
+  },
 }
