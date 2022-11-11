@@ -176,6 +176,7 @@ lvim.plugins = {
       }
     end
   },
+  "nvim-treesitter/nvim-treesitter-textobjects",
 
   -- Colorschemes
   {
