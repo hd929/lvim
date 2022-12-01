@@ -1,7 +1,7 @@
 reload "user.plugins"
 reload "user.options"
-reload "user.treesitter"
 reload "user.keymaps"
+reload "user.treesitter"
 reload "user.lsp"
 reload "user.telescope"
 reload "user.dial"
