@@ -6,6 +6,7 @@ reload "user.lsp"
 reload "user.telescope"
 reload "user.dial"
 reload "user.zen-mode"
+reload "user.smoothie"
 
 -- general
 lvim.log.level = "warn"
