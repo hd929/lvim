@@ -96,7 +96,7 @@ lvim.plugins = {
   },
   {
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
+    build = "cd app && npm install",
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1
@@ -105,7 +105,6 @@ lvim.plugins = {
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    module = "persistence",
     config = function()
       require("persistence").setup {
         dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
@@ -357,7 +356,7 @@ lvim.plugins = {
   },
   {
     "0x100101/lab.nvim",
-    run = "cd js && npm ci",
+    build = "cd js && npm ci",
     config = function()
       require("lab").setup {
         code_runner = {
@@ -404,8 +403,8 @@ lvim.plugins = {
   },
   {
     "saecki/crates.nvim",
-    tag = "v0.3.0",
-    requires = { "nvim-lua/plenary.nvim" },
+    version = "v0.3.0",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("crates").setup {
         null_ls = {
