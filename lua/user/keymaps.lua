@@ -1,8 +1,8 @@
 lvim.leader = "space"
 
-lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"
+lvim.keys.normal_mode["<C-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<C-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-q>"] = ":BufferKill<CR>"
 
 -- Better window navigation
 lvim.keys.normal_mode["<M-h>"] = "<C-w>h"
