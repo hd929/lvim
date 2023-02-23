@@ -134,9 +134,6 @@ lvim.plugins = {
     end,
   },
   {
-    "p00f/nvim-ts-rainbow",
-  },
-  {
     "romgrk/nvim-treesitter-context",
     config = function()
       require("treesitter-context").setup {
