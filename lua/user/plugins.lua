@@ -204,12 +204,12 @@ lvim.plugins = {
     "rmagatti/goto-preview",
     config = function()
       require("goto-preview").setup {
-        width = 100; -- Width of the floating window
-        height = 25; -- Height of the floating window
-        border = { "", "─", "╮", "│", "╯", "─", "╰", "│" }; -- Border characters of the floating window
-        default_mappings = true; -- Bind default mappings
-        debug = false; -- Print debug information
-        opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
+        width = 100, -- Width of the floating window
+        height = 25, -- Height of the floating window
+        border = { "", "─", "╮", "│", "╯", "─", "╰", "│" }, -- Border characters of the floating window
+        default_mappings = true, -- Bind default mappings
+        debug = false, -- Print debug information
+        opacity = nil, -- 0-100 opacity level of the floating window where 100 is fully transparent.
         post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
       }
     end
@@ -349,28 +349,6 @@ lvim.plugins = {
       local keymap = vim.api.nvim_set_keymap
 
       keymap("n", "<M-r>", ":silent only | Jaq<CR>", opts)
-    end
-  },
-  {
-    "0x100101/lab.nvim",
-    build = "cd js && npm ci",
-    config = function()
-      require("lab").setup {
-        code_runner = {
-          enabled = true,
-        },
-        quick_data = {
-          enabled = false,
-        },
-      }
-
-      local opts = { noremap = true, silent = true }
-
-      local keymap = vim.api.nvim_set_keymap
-
-      keymap("n", "<m-4>", ":Lab code run<cr>", opts)
-      keymap("n", "<m-5>", ":Lab code stop<cr>", opts)
-      keymap("n", "<m-6>", ":Lab code panel<cr>", opts)
     end
   },
   {
