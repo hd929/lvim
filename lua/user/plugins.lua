@@ -14,7 +14,7 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("numb").setup {
-        show_numbers = true, -- Enable 'number' for the window while peeking
+        show_numbers = true,    -- Enable 'number' for the window while peeking
         show_cursorline = true, -- Enable 'cursorline' for the window while peeking
       }
     end,
@@ -79,6 +79,17 @@ lvim.plugins = {
       require('symbols-outline').setup()
     end
   },
+  {
+    "Exafunction/codeium.vim",
+    config = function()
+      local opts = { expr = true, silent = true }
+
+      vim.keymap.set('i', '<M-a>', function() return vim.fn['codeium#Accept']() end, opts)
+      vim.keymap.set('i', '<M-.>', function() return vim.fn['codeium#CycleCompletions'](1) end, opts)
+      vim.keymap.set('i', '<M-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, opts)
+      vim.keymap.set('i', '<M-x>', function() return vim.fn['codeium#Clear']() end, opts)
+    end
+  },
 
   -- General
   "tpope/vim-surround",
@@ -137,10 +148,11 @@ lvim.plugins = {
     "romgrk/nvim-treesitter-context",
     config = function()
       require("treesitter-context").setup {
-        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        enable = true,   -- Enable this plugin (Can be enabled/disabled later via commands)
         throttle = true, -- Throttles plugin updates (may improve performance)
-        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-        patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+        max_lines = 0,   -- How many lines the window should span. Values <= 0 mean no limit.
+        patterns = {
+          -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
           -- For all filetypes
           -- Note that setting an entry here replaces all other patterns for this entry.
           -- By setting the 'default' entry below, you can control which nodes you want to
@@ -163,20 +175,20 @@ lvim.plugins = {
       require("colorizer").setup {
         filetypes = { "*" },
         user_default_options = {
-          RGB = true, -- #RGB hex codes
-          RRGGBB = true, -- #RRGGBB hex codes
-          names = false, -- "Name" codes like Blue or blue
-          RRGGBBAA = false, -- #RRGGBBAA hex codes
-          AARRGGBB = false, -- 0xAARRGGBB hex codes
-          rgb_fn = false, -- CSS rgb() and rgba() functions
-          hsl_fn = false, -- CSS hsl() and hsla() functions
-          css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+          RGB = true,          -- #RGB hex codes
+          RRGGBB = true,       -- #RRGGBB hex codes
+          names = false,       -- "Name" codes like Blue or blue
+          RRGGBBAA = false,    -- #RRGGBBAA hex codes
+          AARRGGBB = false,    -- 0xAARRGGBB hex codes
+          rgb_fn = false,      -- CSS rgb() and rgba() functions
+          hsl_fn = false,      -- CSS hsl() and hsla() functions
+          css = false,         -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true,       -- Enable all CSS *functions*: rgb_fn, hsl_fn
           -- Available modes for `mode`: foreground, background,  virtualtext
           mode = "background", -- Set the display mode.
           -- Available methods are false / true / "normal" / "lsp" / "both"
           -- True is same as normal
-          tailwind = false, -- Enable tailwind colors
+          tailwind = false,                               -- Enable tailwind colors
           -- parsers can contain values used in |user_default_options|
           sass = { enable = false, parsers = { 'css' } }, -- Enable sass colors
           virtualtext = "■",
@@ -204,13 +216,13 @@ lvim.plugins = {
     "rmagatti/goto-preview",
     config = function()
       require("goto-preview").setup {
-        width = 100, -- Width of the floating window
-        height = 25, -- Height of the floating window
+        width = 100,                                         -- Width of the floating window
+        height = 25,                                         -- Height of the floating window
         border = { "", "─", "╮", "│", "╯", "─", "╰", "│" }, -- Border characters of the floating window
-        default_mappings = true, -- Bind default mappings
-        debug = false, -- Print debug information
-        opacity = nil, -- 0-100 opacity level of the floating window where 100 is fully transparent.
-        post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
+        default_mappings = true,                             -- Bind default mappings
+        debug = false,                                       -- Print debug information
+        opacity = nil,                                       -- 0-100 opacity level of the floating window where 100 is fully transparent.
+        post_open_hook = nil                                 -- A function taking two arguments, a buffer and a window to be ran as a hook.
       }
     end
   },
@@ -227,7 +239,6 @@ lvim.plugins = {
           -- hover_with_actions = true,
           -- options same as lsp hover / vim.lsp.util.open_floating_preview()
           hover_actions = {
-
             -- the border that is used for the hover window
             -- see vim.api.nvim_open_win()
             border = {
@@ -414,7 +425,7 @@ lvim.plugins = {
         show = true,
         show_in_active_only = false,
         set_highlights = true,
-        folds = 1000, -- handle folds, set to number to disable folds if no. of lines in buffer exceeds this
+        folds = 1000,      -- handle folds, set to number to disable folds if no. of lines in buffer exceeds this
         max_lines = false, -- disables if no. of lines in buffer exceeds this
         handle = {
           text = " ",
@@ -527,7 +538,7 @@ lvim.plugins = {
           diagnostic = false,
           gitsigns = false, -- Requires gitsigns
           handle = true,
-          search = false, -- Requires hlslens
+          search = false,   -- Requires hlslens
         },
       }
     end
