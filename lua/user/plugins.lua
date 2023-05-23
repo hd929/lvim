@@ -372,12 +372,12 @@ lvim.plugins = {
 			keymap("n", "<M-r>", ":silent only | Jaq<CR>", opts)
 		end,
 	},
-	{
-		"j-hui/fidget.nvim",
-		config = function()
-			require("fidget").setup()
-		end,
-	},
+	-- {
+	--   "j-hui/fidget.nvim",
+	--   config = function()
+	--     require("fidget").setup()
+	--   end,
+	-- },
 
 	-- "MunifTanjim/nui.nvim",
 	-- {

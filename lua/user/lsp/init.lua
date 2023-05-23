@@ -6,7 +6,7 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "stylua", filetypes = { "lua" } },
 	{ command = "shfmt", filetypes = { "sh", "zsh" } },
-	{ command = "prettier", filetypes = { "css", "javascript", "scss" } },
+	{ command = "prettier", filetypes = { "css", "javascript", "javascriptreact", "typescript", "typescriptreact" } },
 })
 
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
@@ -14,7 +14,7 @@ formatters.setup({
 
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	{ command = "eslint_d", filetypes = { "javascript" } },
+	{ command = "eslint_d", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
 })
 
 require("user.lsp.languages.js-ts")
