@@ -219,6 +219,12 @@ lvim.plugins = {
 		end,
 	},
 	{
+		"svrana/neosolarized.nvim",
+		dependencies = {
+			"tjdevries/colorbuddy.nvim",
+		},
+	},
+	{
 		"rktjmp/lush.nvim",
 	},
 
