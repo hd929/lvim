@@ -8,8 +8,4 @@ reload("user.dial")
 reload("user.zen-mode")
 reload("user.smoothie")
 reload("user.colorscheme")
-
--- general
-lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.transparent_window = true
+reload("user.lualine")
