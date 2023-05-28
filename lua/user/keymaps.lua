@@ -1,7 +1,9 @@
 lvim.leader = "space"
 
-lvim.keys.normal_mode["<C-l>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<C-h>"] = ":BufferLineCyclePrev<CR>"
+-- lvim.keys.normal_mode["<C-l>"] = ":BufferLineCycleNext<CR>"
+-- lvim.keys.normal_mode["<C-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-l>"] = "<Plug>(CybuNext)"
+lvim.keys.normal_mode["<C-h>"] = "<Plug>(CybuPrev)"
 lvim.keys.normal_mode["<C-q>"] = ":BufferKill<CR>"
 
 -- Better window navigation
@@ -12,14 +14,16 @@ lvim.keys.normal_mode["<M-l>"] = "<C-w>l"
 
 lvim.keys.normal_mode["gx"] = [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]]
 
-lvim.keys.normal_mode["<tab>"] = "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>"
-lvim.keys.normal_mode["<s-tab>"] = "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>"
+lvim.keys.normal_mode["<tab>"] =
+	"<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>"
+lvim.keys.normal_mode["<s-tab>"] =
+	"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>"
 
 lvim.builtin.which_key.mappings["S"] = {
-  name = "Session",
-  c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
-  l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
-  Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+	name = "Session",
+	c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+	l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
+	Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
 
 -- Harpoon

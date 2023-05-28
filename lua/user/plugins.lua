@@ -561,4 +561,35 @@ lvim.plugins = {
 			})
 		end,
 	},
+
+	-- Utilities
+	{
+		"stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup()
+		end,
+	},
+	{
+		"ghillb/cybu.nvim",
+		config = function()
+			require("cybu").setup({
+				position = {
+					relative_to = "win", -- win, editor, cursor
+					anchor = "topright", -- topleft, topcenter, topright,
+				},
+				style = {
+					path = "relative",
+					path_abbreviation = "shortened",
+				},
+				behavior = {
+					mode = {
+						default = {
+							switch = "immediate", -- immediate, on_close
+							view = "paging", -- paging, rolling
+						},
+					},
+				},
+			})
+		end,
+	},
 }
