@@ -7,7 +7,7 @@ formatters.setup({
 	{ command = "stylua", filetypes = { "lua" } },
 	{ command = "shfmt", filetypes = { "sh", "zsh" } },
 	{
-		command = "prettier",
+		command = "prettierd",
 		filetypes = { "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
 	},
 })

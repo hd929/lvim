@@ -441,7 +441,7 @@ lvim.plugins = {
 				max_lines = false, -- disables if no. of lines in buffer exceeds this
 				handle = {
 					text = " ",
-					color = "#292e42",
+					color = "#002b36",
 					cterm = nil,
 					-- highlight = "CursorColumn",
 					hide_if_all_visible = false, -- Hides handle if all lines are visible
@@ -451,7 +451,7 @@ lvim.plugins = {
 						-- text = "•",
 						text = "─",
 						priority = 0,
-						color = "#1a1b26",
+						color = "#93a1a1",
 						cterm = nil,
 						-- highlight = "Normal",
 					},
