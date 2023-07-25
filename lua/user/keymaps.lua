@@ -1,9 +1,9 @@
 lvim.leader = "space"
 
--- lvim.keys.normal_mode["<C-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<C-h>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<C-l>"] = "<Plug>(CybuNext)"
-lvim.keys.normal_mode["<C-h>"] = "<Plug>(CybuPrev)"
+lvim.keys.normal_mode["<C-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<C-h>"] = ":BufferLineCyclePrev<CR>"
+-- lvim.keys.normal_mode["<C-l>"] = "<Plug>(CybuNext)"
+-- lvim.keys.normal_mode["<C-h>"] = "<Plug>(CybuPrev)"
 lvim.keys.normal_mode["<C-q>"] = ":BufferKill<CR>"
 
 -- Better window navigation

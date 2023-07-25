@@ -3,7 +3,7 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.transparent_window = true
 
-lvim.builtin.bufferline.active = false
+lvim.builtin.bufferline.active = true
 lvim.builtin.terminal.shell = "pwsh"
 
 lvim.builtin.alpha.active = true

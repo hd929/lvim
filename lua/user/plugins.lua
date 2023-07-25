@@ -81,25 +81,25 @@ lvim.plugins = {
 			require("symbols-outline").setup()
 		end,
 	},
-	-- {
-	-- 	"Exafunction/codeium.vim",
-	-- 	config = function()
-	-- 		local opts = { expr = true, silent = true }
+	{
+		"Exafunction/codeium.vim",
+		config = function()
+			local opts = { expr = true, silent = true }
 
-	-- 		vim.keymap.set("i", "<M-a>", function()
-	-- 			return vim.fn["codeium#Accept"]()
-	-- 		end, opts)
-	-- 		vim.keymap.set("i", "<M-.>", function()
-	-- 			return vim.fn["codeium#CycleCompletions"](1)
-	-- 		end, opts)
-	-- 		vim.keymap.set("i", "<M-,>", function()
-	-- 			return vim.fn["codeium#CycleCompletions"](-1)
-	-- 		end, opts)
-	-- 		vim.keymap.set("i", "<M-x>", function()
-	-- 			return vim.fn["codeium#Clear"]()
-	-- 		end, opts)
-	-- 	end,
-	-- },
+			vim.keymap.set("i", "<M-a>", function()
+				return vim.fn["codeium#Accept"]()
+			end, opts)
+			vim.keymap.set("i", "<M-.>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, opts)
+			vim.keymap.set("i", "<M-,>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, opts)
+			vim.keymap.set("i", "<M-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, opts)
+		end,
+	},
 	{ "jose-elias-alvarez/typescript.nvim" },
 
 	-- General
@@ -148,6 +148,14 @@ lvim.plugins = {
 			vim.g.gitblame_enabled = 0
 		end,
 	},
+	{
+		"NeogitOrg/neogit",
+		dependencies = "nvim-lua/plenary.nvim",
+		config = function()
+			require("neogit").setup()
+		end,
+	},
+
 	-- Treesitter
 	{
 		"windwp/nvim-ts-autotag",
@@ -565,6 +573,7 @@ lvim.plugins = {
 	},
 	{
 		"ghillb/cybu.nvim",
+		enabled = false,
 		config = function()
 			require("cybu").setup({
 				position = {
