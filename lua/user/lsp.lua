@@ -11,4 +11,8 @@ formatters.setup {
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
     filetypes = { "typescript", "typescriptreact", "css", "scss", "javascript" },
   },
+  {
+    command = "clang-format",
+    extra_args = { "-style=file", "--break-after-return=true", "--indent=spaces=4" }
+  }
 }
