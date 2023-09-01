@@ -9,7 +9,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Treesitter
 lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enable = true
+-- lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
