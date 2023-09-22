@@ -45,5 +45,3 @@ zen_mode.setup {
     -- require("user.winbar").create_winbar()
   end,
 }
-
-lvim.keys.normal_mode["<C-z>"] = ":ZenMode<CR>"

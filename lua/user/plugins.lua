@@ -373,12 +373,13 @@ lvim.plugins = {
       keymap("n", "<m-6>", ":Lab code panel<cr>", opts)
     end
   },
-  -- {
-  --   "j-hui/fidget.nvim",
-  --   config = function()
-  --     require("fidget").setup()
-  --   end
-  -- },
+  {
+    "j-hui/fidget.nvim",
+    branch = "legacy",
+    config = function()
+      require("fidget").setup()
+    end
+  },
 
   -- "MunifTanjim/nui.nvim",
   -- {

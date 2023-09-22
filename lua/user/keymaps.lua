@@ -28,3 +28,5 @@ lvim.builtin.which_key.mappings["."] = { '<cmd>lua require("harpoon.ui").nav_nex
 lvim.builtin.which_key.mappings[","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" }
 lvim.builtin.which_key.mappings["s"] = { "<cmd>Telescope harpoon marks<cr>", "Search Files" }
 lvim.builtin.which_key.mappings[";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" }
+
+lvim.builtin.which_key.mappings["z"] = {"<cmd>ZenMode<cr>", "Zen Mode"}
