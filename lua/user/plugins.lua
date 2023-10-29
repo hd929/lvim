@@ -79,6 +79,7 @@ lvim.plugins = {
       require('symbols-outline').setup()
     end
   },
+  { "jose-elias-alvarez/typescript.nvim" },
 
   -- General
   "tpope/vim-surround",
@@ -197,6 +198,12 @@ lvim.plugins = {
   },
   {
     "rktjmp/lush.nvim",
+  },
+  {
+    "navarasu/onedark.nvim",
+    opts = {
+      style = "darker"
+    }
   },
 
   -- LSP
@@ -421,15 +428,6 @@ lvim.plugins = {
     end,
   },
 
-  {
-    "christianchiarulli/harpoon",
-    config = function()
-      local _, telescope = pcall(require, 'telescope')
-      if not _ then return end
-
-      telescope.load_extension "harpoon"
-    end,
-  },
   {
     "petertriho/nvim-scrollbar",
     config = function()
