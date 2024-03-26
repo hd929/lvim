@@ -428,17 +428,6 @@ lvim.plugins = {
 	},
 
 	{
-		"christianchiarulli/harpoon",
-		config = function()
-			local _, telescope = pcall(require, "telescope")
-			if not _ then
-				return
-			end
-
-			telescope.load_extension("harpoon")
-		end,
-	},
-	{
 		"petertriho/nvim-scrollbar",
 		config = function()
 			require("scrollbar").setup({
